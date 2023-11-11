@@ -57,9 +57,13 @@ function App() {
               count === 1 ? "day" : "days"
             } from today is ${date.toDateString()} `}
       </h3>
-      <div className="reset">
-        <button onClick={resetVals}>Reset</button>
-      </div>
+      {count !== 0 || step !== 1 ? (
+        <div className="reset">
+          <button onClick={resetVals}>Reset</button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
